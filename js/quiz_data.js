@@ -26,7 +26,7 @@ const quiz = [
     },
     {
         "q": {
-            "1" : "Sind Sie zufrieden mit der Vielfältigkeit des Kosmetiksortiments von Balea?"}, 
+            "1" : "Sind Sie zufrieden mit der Vielfältigkeit des Kosmetiksortiments von Essence?"}, 
         "a" : {
             "1": "ja, ich bin völlig zufrieden",
             "2": "ich würde gerne ein breiteres sortiment sehen",
@@ -35,7 +35,7 @@ const quiz = [
     },
     {
         "q": {
-            "1" : "Entspricht die Qualität der Kosmetik von Balea ihren Erwartungen?"}, 
+            "1" : "Entspricht die Qualität der Kosmetik von Essence ihren Erwartungen?"}, 
         "a" : {
             "1": "entspricht völlig",
             "2": "nicht immer",
@@ -44,7 +44,7 @@ const quiz = [
     },
     {
         "q": {
-            "1" : "Entspricht der Preis der Kosmetik von Baalea deren Qualität?"}, 
+            "1" : "Entspricht der Preis der Kosmetik von Essence deren Qualität?"}, 
         "a" : {
             "1": "qualität übersteigt den preis",
             "2": "entspricht",
