@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Monster</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jockey+One&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        box-sizing: border-box;
+    }
+
+    body {
+        height: 100vh;
+        font-family: 'Jockey One', sans-serif;
+        color: #fff;
+        background-color: #000;
+    }
+
+    header {
+        min-height: 270px;
+        width: 100%;
+        height: 30%;
+    }
+
+    .header_de {
+        background: url(header_de.jpg) no-repeat center top;
+    }
+
+    .header_other {
+        background: url(header_other.jpg) no-repeat center top;
+    }
+
+
+    a {
+        text-decoration: none;
+        color: #fff;
+        outline: none;
+    }
+
+    section {
+        background-color: #141414;
+        min-height: 70%;
+        background: url(bg.jpg) no-repeat center bottom;
+        background-size: cover;
+    }
+
+    .container {
+        max-width: 480px;
+        margin: 0 auto;
+        padding-bottom: 40px;
+    }
+
+    .content {
+        padding-top: 50px;
+        text-align: center;
+    }
+
+    .content__title,
+    .question {}
+
+    .content__text {
+        margin-top: 25px;
+        margin-bottom: 30px;
+    }
+
+    .question {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .question__item:not(last-child) {
+        margin-bottom: 30px;
+    }
+
+    .answers {
+        margin-top: 30px;
+    }
+
+    .answers__item {
+        text-transform: uppercase;
+        margin: 0 auto;
+        background-color: #a2c84f;
+        border-radius: 8px;
+        width: 255px;
+        padding-top: 13px;
+        padding-bottom: 15px;
+        line-height: 15px;
+    }
+
+
+    .answers__last {
+        padding-top: 13px;
+        padding-bottom: 15px;
+        line-height: 15px;
+        margin: 0 auto;
+        background-color: #13ac17;
+        border-radius: 8px;
+        width: 255px;
+    }
+
+
+    .answers__item:not(first-child) {
+        margin-top: 10px;
+
+    }
+
+    .btn {
+        font-size: 20px;    
+        text-transform: uppercase;
+        margin: 0 auto;
+        background-color: #a2c84f;
+        border-radius: 8px;
+        width: 255px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        line-height: 20px;
+    }
+
+    .shadow {
+        -moz-box-shadow: 0 0 15px rgba(162, 200, 79, 1);
+        -webkit-box-shadow: 0 0 15px rgba(162, 200, 79, 1);
+        box-shadow: 0 0 15px rgba(162, 200, 79, 1);
+    }
+
+    </style>
+</head>
+
+<body>
+    <header id="header">
+    </header>
+    <section>
+        <div class="container">
+            <div class="content">
+                <div class="question">
+                </div>
+                <div class="answers">
+                </div>
+            </div>
+        </div>
+    </section>
+   <script type="text/javascript">
+    // Ссылка для последней страницы
+    const link_de = '"http://yandex.ru/"';
+    const link = "http://google.com/";
+
+    const utm = window.location.search.replace( '?', '');
+
+    let a_href = "";
+
+    let requiredLang = 'de';
+
+    let userLang = navigator.language || navigator.userLanguage;
+
+    let isMobileDevice = false;
+
+    if (!userLang.toLowerCase().indexOf(requiredLang)){
+        userLang = 'de';
+    }
+
+    headerImagePost();
+
+    if(userLang == 'de'){
+        a_href = link_de + utm;
+    }else {
+        a_href = link + utm;
+    }
+
+    if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)){
+        isMobileDevice = true;
+    }
+
+    function headerImagePost() {
+        var element = document.getElementById("header");
+        if(userLang == 'de'){
+            element.classList.add("header_de");
+        }else {
+            element.classList.add("header_other");
+        }
+    }
+
+    const quiz_other = [{
+            "q": {
+                "1": "We are conducting a customer survey. Help make us better!"
+            },
+            "a": {
+                "1": "Start"
+            }
+        },
+        {
+            "q": { "1": "Which of our tastes do you prefer?" },
+            "a": {
+                "1": "Energy",
+                "2": "Ultra",
+                "3": "Khaos"
+            }
+        },
+        {
+            "q": { "1": "What is important to you when choosing a product?" },
+            "a": {
+                "1": "Price",
+                "2": "Product quality",
+                "3": "Availability in stock"
+            }
+        },
+        {
+            "q": { "1": "Have you ever won Energy Awards?" },
+            "a": {
+                "1": "YES",
+                "2": "NO"
+            }
+        },
+        {
+            "q": {
+                "1": "Does the quality of the product meet your expectations?"
+            },
+            "a": {
+                "1": "Full compliance",
+                "2": "Not always",
+                "3": "skip"
+            }
+        },
+        {
+            "q": { "1": "Would you recommend it to your friends and family?" },
+            "a": {
+                "1": "YES",
+                "2": "NO"
+            }
+        },
+        {
+            "q": {
+                "1": ""
+            },
+            "a": {
+                "1": "THANK YOU!"
+            }
+        }
+    ];
+    const quiz_de = [{
+            "q": {
+                "1": "Energie tanken!<br>Freunde, zusammen mit unseren Sponsoren suchen wir Leute, die das Monster Energy Kit bekommen können. Beantworten Sie nur 5 Fragen und wir werden Sie auswählen. Wenn Sie fertig sind, klicken Sie auf die Schaltfläche Start!"
+            },
+            "a": {
+                "1": "Beginnen"
+            }
+        },
+        {
+            "q": { "1": "Welchen von unseren Geschmäckern bevorzugen Sie?" },
+            "a": {
+                "1": "Monster Energie",
+                "2": "Monster der arzt",
+                "3": "Monster ultra",
+                "4": "Monster khaos"
+            }
+        },
+        {
+            "q": { "1": "Was ist Ihnen bei der Auswahl eines Getränks wichtig?" },
+            "a": {
+                "1": "Preis",
+                "2": "Produktqualität",
+                "3": "Verfügbarkeit in lagern"
+            }
+        },
+        {
+            "q": { "1": "Hast du jemals Monster Energy Awards gewonnen?" },
+            "a": {
+                "1": "JA",
+                "2": "NEIN"
+            }
+        },
+        {
+            "q": {
+                "1": "Entspricht die Qualität des Monster Energy Drinks Ihren Erwartungen?"
+            },
+            "a": {
+                "1": "Vollständige einhaltung",
+                "2": "Nicht immer",
+                "3": "überspringen"
+            }
+        },
+        {
+            "q": { "1": "Würden Sie Monster Energy Ihren Freunden und Bekannten empfehlen?" },
+            "a": {
+                "1": "JA",
+                "2": "NEIN"
+            }
+        },
+        {
+            "q": {
+                "1": "Großartig! <br> Vielen Dank für Ihre Antworten. Folgen Sie nun dem Link zu der Site, auf der Sie Ihre E-Mail-Adresse eingeben müssen. Wir können dies nutzen, um Sie so schnell wie möglich zu kontaktieren und Ihnen mitzuteilen, wie und wo Sie den Preis bestimmen können."
+            },
+            "a": {
+                "1": "Заполнить!"
+            }
+        }
+    ];
+    window.onload = function() {
+
+
+        let step = 0;
+
+        showQuestion();
+        document.onclick = function(event) {
+            event.stopPropagation();
+            if (event.target.classList.contains('answers__item')) {
+                step++;
+                showQuestion(step);
+            }
+        }
+
+        function showQuestion(questionNumber) {
+            let answer = '';
+            let question = '';
+            if(userLang == 'de' && isMobileDevice == true){
+                for (let key in quiz_de[step]['q']) {
+                question += `<div class="question__item">${quiz_de[step]['q'][key]}</div>`;
+                }
+                document.querySelector(".question").innerHTML = question;
+                if (step == 0) {
+                    answer += `<div class="answers__item shadow btn">${quiz_de[step]['a'][1]}</div>`;
+                }
+                if (step == 6) {
+                    answer += `<a href="${a_href}"><div class="btn shadow">${quiz_de[step]['a'][1]}</div></a>`;
+                }
+                if (step > 0 && step < 6) {
+                    for (let key in quiz_de[step]['a']) {
+                        answer += `<div class="answers__item">${quiz_de[step]['a'][key]}</div>`;
+                    }
+                }
+            }else {
+                for (let key in quiz_other[step]['q']) {
+                question += `<div class="question__item">${quiz_other[step]['q'][key]}</div>`;
+                }
+                document.querySelector(".question").innerHTML = question;
+                if (step == 0) {
+                    answer += `<div class="answers__item btn shadow">${quiz_other[step]['a'][1]}</div>`;
+                }
+                if (step == 6) {
+                    answer += `<a href="${a_href}"><div class="btn shadow">${quiz_other[step]['a'][1]}</div></a>`;
+                }
+                if (step > 0 && step < 6) {
+                    for (let key in quiz_other[step]['a']) {
+                        answer += `<div class="answers__item">${quiz_other[step]['a'][key]}</div>`;
+                    }
+                }
+            }
+
+            document.querySelector(".answers").innerHTML = answer;
+        }
+    }
+    </script>
+</body>
+
+</html>
